@@ -10,6 +10,9 @@ import { SalesComponent } from './sales/sales.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { RemindersComponent } from './reminders/reminders.component';
 import { TodoComponent } from './todo/todo.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+import { ExpiryReminderComponent } from './expiry-reminder/expiry-reminder.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   {
@@ -30,6 +33,16 @@ const routes: Routes = [
     path: 'stock',
     component: RemindersComponent
   }
+  , 
+  {
+    path: 'expiry-reminder',
+    component: ExpiryReminderComponent
+  }
+  ,
+  {
+    path: 'appointment',
+    component: AppointmentComponent
+  }
   ,
   {
     path: 'todo',
@@ -44,7 +57,10 @@ const routes: Routes = [
     SalesComponent,
     PurchasesComponent,
     RemindersComponent,
-    TodoComponent
+    TodoComponent,
+    AppFooterComponent,
+    ExpiryReminderComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes),
