@@ -63,9 +63,27 @@
             <td>225</td>
             <td>1-1-2019</td>
             <td>
-              <button type="button" class="btn btn-outline-primary btn-sm">Add</button>
+              <button type="button" class="btn btn-outline-primary btn-sm" (click)="addFieldValue()">Add</button>
             </td>
           </tr>
+          <tr *ngFor="let field of fieldArray; let i = index">
+            <td>
+              <input class="form-control" type="text" name="{{i+1}}" value="{{i+1}}" />
+            </td>
+            <td>
+              <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}" />
+            </td>
+            <td>
+              <input [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" />
+            </td>
+            <td>
+              <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}" />
+            </td>
+            <td>
+              <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+            </td>
+          </tr>
+
           <tr>
             <td></td>
             <td></td>
@@ -107,53 +125,3 @@
     <button class="btn btn-warning float-right btn-primary-spacing  hidden-print" onclick="window.print('.card-body')">
       <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print Receipt</button>
   </div>
-
-
-
-  <!-- Modal
-  <div id="myModal" class="modal text-dark fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Add Particulars Information</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <div class="form-group">
-              <label for="particular">Product Name:</label>
-              <input type="text" class="form-control" id="productName">
-            </div>
-            <div class="form-group">
-              <label for="bno">Batch Number:</label>
-              <input type="text" class="form-control" id="batchNumber">
-            </div>
-            <div class="form-group">
-              <label for="expdate">Expiry Date:</label>
-              <input type="date" class="form-control" id="expiryDate">
-            </div>
-            <div class="form-group">
-              <label for="price">Quantity:</label>
-              <input type="number" class="form-control" id="quantity">
-            </div>
-            <div class="form-group">
-              <label for="price">GST %:</label>
-              <input type="number" class="form-control" id="quantity">
-            </div>
-            <div class="form-group">
-              <label for="price">Amount:</label>
-              <input type="number" class="form-control" id="amount">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Save</button>
-          <button type="submit" class="btn btn-warning">Add One More</button>
-          <button type="reset" class="btn btn-dark">Reset</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> 
- -->
